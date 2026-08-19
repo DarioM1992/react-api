@@ -8,7 +8,11 @@ export const App = () => {
 
   useEffect(() => {
     axios.get('https://lanciweb.github.io/demo/api/actors/')
-      .then(res => setActors(res.data));
+      .then(res => {
+        const actors = res.data;
+        console.log(actors);
+        setActors(actors);
+    });
     }, []);
   return (
     <>
